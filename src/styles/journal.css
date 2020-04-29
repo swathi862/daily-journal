@@ -13,7 +13,7 @@ form{
     justify-content: center;
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 select,option{
@@ -34,10 +34,10 @@ body{
 }
 
 .entryLog{
-    background-color:#ccccff;
+    background-color:#cedde4;
     padding: 0.5em;
     text-align: center;
-    border: .4em dotted rgb(90, 88, 88);
+    /* border: .4em dotted rgb(90, 88, 88); */
 }
 
 .row {
