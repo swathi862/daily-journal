@@ -1,3 +1,4 @@
+import apiManager from "./apiManager.js"
 
 //Add new Journal Entry Component function from DOM/user input
 const addNewJournalEntry = () =>{
@@ -6,14 +7,13 @@ const addNewJournalEntry = () =>{
     const entryValue = document.querySelector("#entry").value
     const moodValue = document.querySelector("#mood").value
 
-    const newJournalEntry = Object.create(journalEntry)
-    newJournalEntry.date = dateValue
-    newJournalEntry.concept = conceptValue
-    newJournalEntry.entry = entryValue
-    newJournalEntry.mood = moodValue
-
-
-    journalEntries.push(newJournalEntry)
+    const newJournalEntry = {
+        date: dateValue,
+        concept: conceptValue,
+        entry: entryValue,
+        mood: moodValue
+    }
+    apiManager.addJournalEntries(newJournalEntry);
 }
 
 export default addNewJournalEntry
