@@ -6,7 +6,7 @@ const apiManager = {
         .then(r => r.json())  // Parse as JSON
     },
     addJournalEntries(newEntry){
-        fetch("http://localhost:3000/entries", {
+        return fetch("http://localhost:3000/entries", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -24,7 +24,7 @@ const apiManager = {
         })
     },
     deleteJournalEntry(idToDelete){
-        fetch(`http://localhost:3000/entries/${idToDelete}`,{
+        return fetch(`http://localhost:3000/entries/${idToDelete}`,{
         method: "DELETE"
         }).then(() => {
             apiManager.getJournalEntries()
@@ -36,6 +36,32 @@ const apiManager = {
                 }
             })
         })
+    },
+    editJournalEntry(idToEdit){
+        return fetch(`http://localhost:3000/entries/${idToEdit}`) // Fetch from the API
+        .then(r => r.json())
+        .then(entryToEdit =>{
+            document.querySelector(`#journal-entry-${idToEdit}`).innerHTML += DOMPrinter.buildEditForm(entryToEdit)
+        })
+    },
+    saveJournalEntry(idtoSave){
+        return fetch(`http://localhost:3000/entries/${idtoSave}`,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(DOMPrinter.saveEditedObject(idtoSave))
+    }).then(() => {
+        apiManager.getJournalEntries()
+        .then(entries =>{
+            DOMPrinter.buildEntryLogContainer();
+            for (const singleEntry of entries){
+                let entryComponent = ""
+                entryComponent = DOMPrinter.makeJournalEntryComponent(singleEntry)
+                document.querySelector(".entryLog").innerHTML += entryComponent
+            }
+        })
+    })
     }
 }
 

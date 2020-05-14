@@ -27,6 +27,20 @@
       "entry": "So, I learned today that I need to create separate sub-directories \"api\" and \"src\" so the JSON server doesn't know that it's running?? So, cd into src and code . through that directory",
       "mood": "i'M fInE",
       "id": 6
+    },
+    {
+      "date": "2020-05-13",
+      "concept": "Updating/Editing JSON Objects",
+      "entry": "So, there's a lot of information floating around in my brain. I don't understand all of it, and I have a feeling that I won't be able to manually replicate all of it on my own soon, but one day, it'll happen and that's good enough for me for now.",
+      "mood": "i'M fInE",
+      "id": 7
+    },
+    {
+      "id": 11,
+      "date": "2020-05-14",
+      "concept": "C.R.U.D.",
+      "entry": "I successfully completed C.R.U.D. (create, retrieve, update, and delete) functions for this program! YEEET!",
+      "mood": "Happy"
     }
   ]
 }

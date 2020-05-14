@@ -6,3 +6,5 @@ import eventListeners from './eventListeners.js'
 
 eventListeners.recordEventListener()
 eventListeners.deleteEventListener()
+eventListeners.editEventListener()
+eventListeners.saveEventListener()

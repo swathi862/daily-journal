@@ -19,6 +19,22 @@ const eventListeners = {
                 apiManager.deleteJournalEntry(deleteID);
             }
         })
+    },
+    editEventListener(){
+        document.querySelector("body").addEventListener("click", function(){
+            if (event.target.id.includes("edit-btn") === true){
+                const editID = event.target.id.split("-")[2]
+                apiManager.editJournalEntry(editID);
+            }
+        })
+    },
+    saveEventListener(){
+        document.querySelector("body").addEventListener("click", function(){
+            if (event.target.id.includes("save-btn") === true){
+                const saveID = event.target.id.split("-")[2]
+                apiManager.saveJournalEntry(saveID);
+            }
+        })
     }
 }
 
